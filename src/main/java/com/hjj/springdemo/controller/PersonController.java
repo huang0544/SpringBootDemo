@@ -20,13 +20,13 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api")
 public class PersonController {
-    @GetMapping("/resourceNotFound")
-    public void throwException() {
-        Person p=new Person("82938390","SnailClimb","male","123");
-        Map<String,Object> map = new HashMap<>();
-        map.put("person id:", p.getId());
-        throw new ResourceNotFoundException(map);
-    }
+//    @GetMapping("/resourceNotFound")
+//    public void throwException() {
+//        Person p=new Person("82938390","SnailClimb","male","123");
+//        Map<String,Object> map = new HashMap<>();
+//        map.put("person id:", p.getId());
+//        throw new ResourceNotFoundException(map);
+//    }
 
     @PostMapping("/person")
     public ResponseEntity<Person> getPerson(@RequestBody @Valid Person person) {
@@ -38,9 +38,9 @@ public class PersonController {
         return ResponseEntity.ok().body(id);
     }
 
-    @PutMapping("/person")
-    public ResponseEntity<String> getPersonByName(@Valid @RequestParam("name") @Size(max = 6,message = "超过 name 的范围了") String name) {
-        return ResponseEntity.ok().body(name);
-    }
+//    @PutMapping("/person")
+//    public ResponseEntity<String> getPersonByName(@Valid @RequestParam("name") @Size(max = 6,message = "超过 name 的范围了") String name) {
+//        return ResponseEntity.ok().body(name);
+//    }
 }
 
