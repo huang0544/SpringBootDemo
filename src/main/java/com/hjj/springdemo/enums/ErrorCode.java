@@ -1,4 +1,4 @@
-package com.hjj.springdemo.result;
+package com.hjj.springdemo.enums;
 
 import lombok.Getter;
 import lombok.ToString;

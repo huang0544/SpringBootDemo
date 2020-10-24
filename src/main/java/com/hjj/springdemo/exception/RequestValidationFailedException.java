@@ -1,6 +1,6 @@
 package com.hjj.springdemo.exception;
 
-import com.hjj.springdemo.result.ErrorCode;
+import com.hjj.springdemo.enums.ErrorCode;
 
 import java.util.Map;
 
