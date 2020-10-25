@@ -41,10 +41,10 @@
         <!--指定生成mapper.xml的路径-->
         <sqlMapGenerator targetPackage="com.hjj.springdemo.mbg.mapper" targetProject="src\main\resources"/>
         <!--指定生成mapper接口的的路径-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.hjj.springdemo.mbg.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.hjj.springdemo.dao"
                              targetProject="src\main\java"/>
         <!--生成全部表tableName设为%-->
-        <table tableName="pms_brand">
+        <table tableName="users">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>
