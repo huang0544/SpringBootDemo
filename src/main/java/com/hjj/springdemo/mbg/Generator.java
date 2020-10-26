@@ -3,17 +3,15 @@ package com.hjj.springdemo.mbg;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
-import org.mybatis.generator.exception.XMLParserException;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @program: SpringBootDemo
- * @description:用于生产MBG的代码
+ * @description: 用于生产MBG的代码
  * @author: hjj
  * @create: 2020-10-15 21:45
  **/
