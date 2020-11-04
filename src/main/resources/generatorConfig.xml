@@ -40,9 +40,11 @@
         <javaModelGenerator targetPackage="com.hjj.springdemo.mbg.model" targetProject="src\main\java"/>
         <!--指定生成mapper.xml的路径-->
         <sqlMapGenerator targetPackage="com.hjj.springdemo.mbg.mapper" targetProject="src\main\resources"/>
-        <!--指定生成mapper接口的的路径-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.hjj.springdemo.dao"
-                             targetProject="src\main\java"/>
+        <!--JavaDao层接口(XxxxDao.java)生成配置 targetProject+targetPackage构成全路径-->
+        <javaClientGenerator targetPackage="com.hjj.springdemo.dao" targetProject="src\main\java" type="XMLMAPPER">
+            <!--是否允许建立子包（对应MySql的scheme）-->
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
         <!--生成全部表tableName设为%-->
         <table tableName="users">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
