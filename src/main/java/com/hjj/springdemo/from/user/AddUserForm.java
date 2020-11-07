@@ -1,7 +1,7 @@
 package com.hjj.springdemo.from.user;
 
+import com.hjj.springdemo.entity.Users;
 import com.hjj.springdemo.from.BaseForm;
-import com.hjj.springdemo.pojo.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -24,7 +24,7 @@ import java.util.Date;
 @Data
 @ApiModel("添加用户需要的表单数据")
 @EqualsAndHashCode(callSuper = false)
-public class AddUserForm extends BaseForm<User> {
+public class AddUserForm extends BaseForm<Users> {
 
     /**
      * 昵称
@@ -63,8 +63,8 @@ public class AddUserForm extends BaseForm<User> {
      * @return 实体对象
      */
     @Override
-    public User buildEntity() {
-        User user = new User();
+    public Users buildEntity() {
+        Users user = new Users();
         BeanUtils.copyProperties(this,user);
         return user;
     }

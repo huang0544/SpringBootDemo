@@ -37,8 +37,8 @@ public class CodeGenerator {
     /**
      * 密码
      */
-    private static final String PASSWORD = "password";
-
+//    private static final String PASSWORD = "password";
+    private static final String PASSWORD = "adminroot";
     /**
      * 作者
      */
