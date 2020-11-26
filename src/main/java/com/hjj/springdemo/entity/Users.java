@@ -1,12 +1,11 @@
 package com.hjj.springdemo.entity;
 
+import 你自己的父类实体,没有就不用设置!;
+import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-
-import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -14,12 +13,12 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @author hjj
- * @since 2020-11-07
+ * @since 2020-11-26
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-public class Users implements Serializable {
+public class Users extends 你自己的父类实体,没有就不用设置! {
 
     private static final long serialVersionUID = 1L;
 
