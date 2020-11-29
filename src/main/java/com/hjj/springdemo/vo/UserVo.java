@@ -4,8 +4,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
 /**
  * @program: springdemo
  * @description: 用户视图模型
@@ -19,25 +17,25 @@ public class UserVo {
     /**
      * 用户编号
      */
-    @ApiModelProperty("用户编号")
-    private Integer id;
-
-    /**
-     * 昵称
-     */
-    @ApiModelProperty("昵称")
-    private String nickname;
+    @ApiModelProperty("用户邮箱")
+    private String email;
 
     /**
      * 用户名
      */
     @ApiModelProperty("用户名")
-    private String username;
+    private String name;
 
     /**
-     * 生日
+     * 性别
      */
-    @ApiModelProperty("生日")
-    private LocalDateTime birthday;
+    @ApiModelProperty("性别")
+    private String sex;
+
+    /**
+     * 电话
+     */
+    @ApiModelProperty("电话")
+    private String iphone;
 
 }
