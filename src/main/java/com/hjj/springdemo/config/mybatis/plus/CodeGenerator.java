@@ -25,7 +25,7 @@ public class CodeGenerator {
     /**
      * 数据库链接地址
      */
-    private static final String URL = "jdbc:mysql://localhost:3306/bookcard?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false";
+    private static final String URL = "jdbc:mysql://localhost:3306/blogger?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false";
 
     /**
      * 驱动
