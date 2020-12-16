@@ -1,8 +1,8 @@
 package com.hjj.springdemo.service.impl;
 
-import com.hjj.springdemo.entity.Users;
-import com.hjj.springdemo.mapper.UsersMapper;
-import com.hjj.springdemo.service.IUsersService;
+import com.hjj.springdemo.entity.Comment;
+import com.hjj.springdemo.mapper.CommentMapper;
+import com.hjj.springdemo.service.ICommentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2020-12-16
  */
 @Service
-public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements IUsersService {
+public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment> implements ICommentService {
 
 }

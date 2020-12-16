@@ -1,12 +1,11 @@
 package com.hjj.springdemo.entity;
 
+import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-
-import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -14,7 +13,7 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @author hjj
- * @since 2020-11-29
+ * @since 2020-12-16
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

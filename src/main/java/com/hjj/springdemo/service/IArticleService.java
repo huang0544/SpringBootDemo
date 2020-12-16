@@ -1,6 +1,6 @@
 package com.hjj.springdemo.service;
 
-import com.hjj.springdemo.entity.Users;
+import com.hjj.springdemo.entity.Article;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author hjj
  * @since 2020-12-16
  */
-public interface IUsersService extends IService<Users> {
+public interface IArticleService extends IService<Article> {
 
 }
