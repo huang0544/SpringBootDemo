@@ -10,24 +10,15 @@ spring:
     username: root
     password: password
   mail:
-    #smtp服务主机  qq邮箱则为smtp.qq.com
-    host: smtp.163.com
-    #服务协议
-    protocol: smtp
-    # 编码集
-    default-encoding: UTF-8
-    #发送邮件的账户
+    host: smtp.qq.com
     username: 346484458@qq.com
-    #授权码
-    password: xxxxxx
-    test-connection: true
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-            required: true
+    password: sputxytreefvxrgoihef
+  resources:
+    static-locations: classpath:/resources/, classpath:/static/ ,classpath:/templates/
+
+mail:
+  fromMail:
+    addr: 346484458@qq.com # 发邮件者
 
 mybatis:
   mapper-locations:
