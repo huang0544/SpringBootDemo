@@ -1,84 +1,90 @@
 package com.hjj.springdemo.service.impl;
 
+import com.github.dozermapper.core.Mapper;
+import com.hjj.springdemo.config.mail.MailProperties;
 import com.hjj.springdemo.entity.Mail;
 import com.hjj.springdemo.service.MailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.mail.MessagingException;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
-import java.io.File;
-
+import javax.mail.internet.MimeMultipart;
+import java.io.IOException;
 
 /**
- * @program: springdemo
- * @description: 邮件服务接口实现类
+ * @program: SpringBootDemo
+ * @description: 邮件接口实现类
  * @author: hjj
- * @create: 2020-12-17 18:43
+ * @create: 2020-12-20 18:38
  **/
+@Service
 public class MailServiceImpl implements MailService {
-    Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private JavaMailSender mailSender;
+    private MailProperties mailProperties;
 
-    @Value("${mail.fromMail.addr}")
-    private String mailFrom;
+    @Autowired
+    private JavaMailSender javaMailSender;
+
+    @Autowired
+    private Mapper mapper;
 
     @Override
-    public void sendMail(Mail mail) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom(mailFrom);
-        message.setTo(mail.getTo());
-        message.setSubject(mail.getSubject());
-        message.setText(mail.getContent());
-        mailSender.send(message);
-        logger.info("发送完毕");
+    public void sendSimpleMailMessage(Mail mail) {
+        SimpleMailMessage simpleMailMessage = mapper.map(mail, SimpleMailMessage.class);
+        if (StringUtils.isEmpty(mail.getFrom())) {
+            mail.setFrom(mailProperties.getFrom());
+        }
+        javaMailSender.send(simpleMailMessage);
     }
 
     @Override
-    public void sendHtmlMail(Mail mail) throws MessagingException {
-        MimeMessage message = mailSender.createMimeMessage();
+    public void sendMimeMessage(Mail mail) {
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        MimeMessageHelper messageHelper;
         try {
-            MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            message.setFrom(mailFrom);
-            helper.setTo(mail.getTo());
-            helper.setSubject(mail.getSubject());
-            helper.setText(mail.getContent(), true);
+            messageHelper = new MimeMessageHelper(mimeMessage, true);
 
-            mailSender.send(message);
-            logger.info("发送Html邮件成功");
-        } catch (Exception e) {
+            if (StringUtils.isEmpty(mail.getFrom())) {
+                messageHelper.setFrom(mailProperties.getFrom());
+            }
+            messageHelper.setTo(mail.getTo());
+            messageHelper.setSubject(mail.getSubject());
+
+            mimeMessage = messageHelper.getMimeMessage();
+            MimeBodyPart mimeBodyPart = new MimeBodyPart();
+            mimeBodyPart.setContent(mail.getText(), "text/html;charset=UTF-8");
+
+            // 描述数据关系
+            MimeMultipart mm = new MimeMultipart();
+            mm.setSubType("related");
+            mm.addBodyPart(mimeBodyPart);
+
+            //添加邮件附件
+            for(String filename:mail.getFilenames()){
+                MimeBodyPart attachPart = new MimeBodyPart();
+                try {
+                    attachPart.attachFile(filename);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                mm.addBodyPart(attachPart);
+            }
+            mimeMessage.setContent(mm);
+            mimeMessage.saveChanges();
+        } catch (MessagingException e) {
             e.printStackTrace();
-            logger.error("发送Html邮件失败");
         }
-    }
-
-    @Override
-    public void sendAttachmentsMail(Mail mail) throws MessagingException {
-        MimeMessage message = mailSender.createMimeMessage();
-        try {
-            MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            message.setFrom(mailFrom);
-            helper.setTo(mail.getTo());
-            helper.setSubject(mail.getSubject());
-            helper.setText(mail.getContent(), true);
-            //附件
-            FileSystemResource resource = new FileSystemResource(new File(mail.getFilePath()));
-            //添加附件
-            helper.addAttachment("test.png", resource);
-
-            mailSender.send(message);
-            logger.info("发送邮件成功");
-        } catch (Exception e) {
-            e.printStackTrace();
-            logger.error("发送邮件失败");
-        }
+        javaMailSender.send(mimeMessage);
     }
 }

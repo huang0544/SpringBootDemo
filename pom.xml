@@ -116,17 +116,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-        <!-- thymeleaf 模板 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>ognl</groupId>-->
-<!--            <artifactId>ognl</artifactId>-->
-<!--            <version>3.2.14</version>-->
-<!--        </dpendency>-->
+        <dependency>
+            <groupId>com.github.dozermapper</groupId>
+            <artifactId>dozer-spring-boot-starter</artifactId>
+            <version>6.4.0</version>
+        </dependency>
     </dependencies>
 
     <build>

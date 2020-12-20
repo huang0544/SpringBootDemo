@@ -9,16 +9,6 @@ spring:
     url: jdbc:mysql://localhost:3306/bookcard?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
     username: root
     password: password
-  mail:
-    host: smtp.qq.com
-    username: 346484458@qq.com
-    password: sputxytreefvxrgoihef
-  resources:
-    static-locations: classpath:/resources/, classpath:/static/ ,classpath:/templates/
-
-mail:
-  fromMail:
-    addr: 346484458@qq.com # 发邮件者
 
 mybatis:
   mapper-locations:
