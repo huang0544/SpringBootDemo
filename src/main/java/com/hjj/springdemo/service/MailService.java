@@ -1,6 +1,6 @@
 package com.hjj.springdemo.service;
 
-import com.hjj.springdemo.entity.Mail;
+import com.hjj.springdemo.vo.MailVo;
 
 /**
  * @program: SpringBootDemo
@@ -10,7 +10,9 @@ import com.hjj.springdemo.entity.Mail;
  **/
 public interface MailService {
 
-    public void sendSimpleMailMessage(Mail mail);
+    //发送邮件
+    MailVo sendMail(MailVo mailVo);
 
-    public void sendMimeMessage(Mail mail);
+    //获取邮件发信人
+    String getMailSendFrom();
 }
