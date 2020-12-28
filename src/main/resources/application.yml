@@ -4,9 +4,11 @@ server:
 # 若要访问端点信息，需要配置用户名和密码
 spring:
   datasource:
+    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/bookcard?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
     username: root
     password: adminroot
+    maxActive: 500
   mail:
     host: smtp.qq.com #SMTP服务器地址
     username:  346484458@qq.com #登陆账号
@@ -20,7 +22,14 @@ spring:
     multipart:
       max-file-size: 10MB #限制单个文件大小
       max-request-size: 50MB #限制请求总量
+  logging:
+    level:
+      org:
+        springframework:
+          security: INFO
+
 mybatis:
   mapper-locations:
     - classpath:mapper/*.xml
     - classpath*:com/**/mapper/*.xml
+
