@@ -37,8 +37,8 @@ public class CodeGenerator {
     /**
      * 密码
      */
-    private static final String PASSWORD = "password";
-//    private static final String PASSWORD = "adminroot";
+//    private static final String PASSWORD = "password";
+    private static final String PASSWORD = "adminroot";
     /**
      * 作者
      */
@@ -196,7 +196,7 @@ public class CodeGenerator {
      */
     public static void main(String[] args) {
         // 执行
-        getAutoGenerator("users","joindating","dating","comment","category","article").execute();
+        getAutoGenerator("role","role_user").execute();
     }
 
 
