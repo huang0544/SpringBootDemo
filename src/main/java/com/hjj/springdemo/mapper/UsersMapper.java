@@ -2,7 +2,6 @@ package com.hjj.springdemo.mapper;
 
 import com.hjj.springdemo.entity.Users;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -10,9 +9,8 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author hjj
- * @since 2020-12-16
+ * @since 2020-12-30
  */
-@Mapper
 public interface UsersMapper extends BaseMapper<Users> {
-
+    public Users findByUserName(String name);
 }
