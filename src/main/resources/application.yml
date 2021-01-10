@@ -1,6 +1,7 @@
 server:
   port: 8080
-
+  servlet:
+    context-path: /basic_project
 # 若要访问端点信息，需要配置用户名和密码
 spring:
   datasource:
@@ -9,27 +10,48 @@ spring:
     username: root
     password: adminroot
     maxActive: 500
+    hikari:
+      # 最小连接
+      minimum-idle: 5
+      # 最大连接
+      maximum-pool-size: 15
+      # 自动提交
+      auto-commit: true
+      # 最大空闲时间
+      idle-timeout: 30000
+      # 连接池名称
+      pool-name: DatebookHikariCP
+      # 最大生命周期
+      max-lifetime: 900000
+      # 连接超时时间
+      connection-timeout: 15000
+      # 心跳检测
+      connection-test-query: select 1
+    # 配置Redis
+    redis:
+      jedis:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
   mail:
     host: smtp.qq.com #SMTP服务器地址
     username:  346484458@qq.com #登陆账号
     password: cqkjmgrqfhabbied #登陆密码（或授权码）
     properties:
       from: 346484458@qq.com #邮件发信人（即真实邮箱）
-  thymeleaf:
-    cache: false
-    prefix: classpath:/views/
-  servlet:
-    multipart:
-      max-file-size: 10MB #限制单个文件大小
-      max-request-size: 50MB #限制请求总量
-  logging:
-    level:
-      org:
-        springframework:
-          security: INFO
 
-mybatis:
-  mapper-locations:
-    - classpath:mapper/*.xml
-    - classpath*:com/**/mapper/*.xml
+# mybatis_plus
+mybatis-plus:
+  # xml路径
+  mapper-locations: classpath:mapping/*Mapper.xml
 
+# 配置swagger
+swagger:
+  version: 2.0
+  groupName: 基础项目
+  title: 基础项目
+  description: 接口文档
+  # 扫描的包路径
+  basePackage: com.hjj.springdemo.controller

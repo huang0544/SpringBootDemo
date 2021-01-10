@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hjj.springdemo.entity.Users;
 import com.hjj.springdemo.from.user.ListUserForm;
 import com.hjj.springdemo.vo.UserVo;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @author hjj
  * @since 2021-01-09
  */
+@Mapper
 public interface UsersMapper extends BaseMapper<Users> {
     /**
      * 获取用户列表
