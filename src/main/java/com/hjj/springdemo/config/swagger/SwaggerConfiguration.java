@@ -24,8 +24,8 @@ import java.util.Collection;
  * @author: hjj
  * @create: 2020-10-24 18:36
  **/
-@Configuration
-@EnableSwagger2
+@Configuration//告诉springboot需要加载配置类
+@EnableSwagger2//启动swagger2，启动在浏览器中访问 http://localhost:8080/swagger-ui.html
 @AllArgsConstructor
 @Profile({"dev", "test"})
 @EnableConfigurationProperties(SwaggerInfo.class)

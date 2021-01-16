@@ -1,14 +1,15 @@
 server:
-  port: 8080
-  servlet:
-    context-path: /basic_project
+  port: 8081
+#  servlet:
+#    context-path: /basic_project
 # 若要访问端点信息，需要配置用户名和密码
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/bookcard?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
     username: root
-    password: adminroot
+#    password: adminroot
+    password: password
     maxActive: 500
     hikari:
       # 最小连接
