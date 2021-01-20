@@ -12,6 +12,8 @@ import com.hjj.springdemo.service.IUsersService;
 import com.hjj.springdemo.utils.MethodUtil;
 import com.hjj.springdemo.vo.PageVo;
 import com.hjj.springdemo.vo.UserVo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,7 +25,9 @@ import org.springframework.stereotype.Service;
  * @since 2021-01-09
  */
 @Service
+@Component
 public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements IUsersService {
+    @Autowired
     private UsersMapper usersMapper;
 
     /**

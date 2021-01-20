@@ -12,6 +12,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +28,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")
 @Api(tags = "用户")
 public class UsersController {
-
+    @Autowired
     private IUsersService usersService;
     /**
      * 添加用户
