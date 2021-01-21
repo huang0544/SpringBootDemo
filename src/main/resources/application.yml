@@ -36,6 +36,9 @@ spring:
           max-wait: -1ms
           max-idle: 8
           min-idle: 0
+    #配置thymeleaf
+    thymeleaf:
+      cache: false
   mail:
     host: smtp.qq.com #SMTP服务器地址
     username:  346484458@qq.com #登陆账号
@@ -56,3 +59,10 @@ swagger:
   description: 接口文档
   # 扫描的包路径
   basePackage: com.hjj.springdemo.controller
+
+#配置SpringSecurity
+logging:
+  level:
+    org:
+      springframework:
+        security: INFO
