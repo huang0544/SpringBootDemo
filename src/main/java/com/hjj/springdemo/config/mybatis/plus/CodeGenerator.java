@@ -196,7 +196,7 @@ public class CodeGenerator {
      */
     public static void main(String[] args) {
         // 执行
-        getAutoGenerator("users").execute();
+        getAutoGenerator("role").execute();
     }
 
 

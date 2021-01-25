@@ -24,4 +24,11 @@ public interface UsersMapper extends BaseMapper<Users> {
      * @return 用户列表
      */
     List<UserVo> listUser(ListUserForm listUserForm);
+
+    /**
+     * 通过昵称查找用户信息
+     * @param name
+     * @return
+     */
+    Users findByUserName(String name);
 }

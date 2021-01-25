@@ -12,7 +12,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author hjj
- * @since 2020-12-29
+ * @since 2021-01-24
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -23,7 +23,7 @@ public class Role implements Serializable {
 
     private Integer id;
 
-    private String name;
+    private String username;
 
 
 }

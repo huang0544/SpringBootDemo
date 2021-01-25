@@ -2,7 +2,6 @@ package com.hjj.springdemo.mapper;
 
 import com.hjj.springdemo.entity.Role;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -10,9 +9,8 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author hjj
- * @since 2020-12-29
+ * @since 2021-01-24
  */
-@Mapper
 public interface RoleMapper extends BaseMapper<Role> {
 
 }
