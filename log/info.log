@@ -1,23 +1,9 @@
-2021-01-18 21:32:54.422 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.4.1.Final
-2021-01-18 21:32:54.476 [restartedMain] INFO  com.hjj.springdemo.SpringdemoApplication - Starting SpringdemoApplication on DESKTOP-ABPMFK8 with PID 296 (F:\workspace\SpringBootDemo\target\classes started by hjj in F:\workspace\SpringBootDemo)
-2021-01-18 21:32:54.495 [restartedMain] INFO  com.hjj.springdemo.SpringdemoApplication - No active profile set, falling back to default profiles: default
-2021-01-18 21:32:54.784 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\hjj\.m2\repository\com\mchange\c3p0\0.9.5.2\c3p0-0.9.5.2.jar referenced one or more files that do not exist: file:/C:/Users/hjj/.m2/repository/com/mchange/c3p0/0.9.5.2/mchange-commons-java-0.2.11.jar
-2021-01-18 21:32:54.788 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-18 21:32:54.789 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-18 21:33:00.417 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2021-01-18 21:33:00.529 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
-2021-01-18 21:33:00.530 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2021-01-18 21:33:00.532 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-18 21:33:00.844 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2021-01-18 21:33:00.845 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6056 ms
-2021-01-18 21:33:01.402 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Starting...
-2021-01-18 21:33:01.875 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Start completed.
-2021-01-18 21:33:04.149 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-01-18 21:33:04.339 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-18 21:33:04.523 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2021-01-18 21:33:05.641 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
-2021-01-18 21:33:05.702 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2021-01-18 21:33:05.704 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2021-01-18 21:33:05.783 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2021-01-18 21:33:05.929 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2021-01-18 21:33:06.454 [restartedMain] INFO  com.hjj.springdemo.SpringdemoApplication - Started SpringdemoApplication in 13.576 seconds (JVM running for 19.261)
+2021-01-31 11:38:47.716 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.4.1.Final
+2021-01-31 11:38:47.756 [restartedMain] INFO  com.hjj.springdemo.SpringdemoApplication - Starting SpringdemoApplication on DESKTOP-HKNL17I with PID 8572 (E:\git CoderLife\SpringBootDemo\target\classes started by weepal in E:\git CoderLife\SpringBootDemo)
+2021-01-31 11:38:47.759 [restartedMain] INFO  com.hjj.springdemo.SpringdemoApplication - No active profile set, falling back to default profiles: default
+2021-01-31 11:38:47.865 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\weepal\.m2\repository\com\mchange\c3p0\0.9.5.2\c3p0-0.9.5.2.jar referenced one or more files that do not exist: file:/C:/Users/weepal/.m2/repository/com/mchange/c3p0/0.9.5.2/mchange-commons-java-0.2.11.jar
+2021-01-31 11:38:47.867 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-31 11:38:47.867 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-31 11:38:50.268 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.

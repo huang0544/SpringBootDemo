@@ -1,0 +1,2 @@
+2021-01-18 21:33:01.433 [restartedMain] WARN  com.zaxxer.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-01-18 21:33:06.311 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.web.multipart.MultipartFile[]
